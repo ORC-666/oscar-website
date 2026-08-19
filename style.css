@@ -1,0 +1,23 @@
+.orc-logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 100px;
+}
+.orc-logo img {
+    width: 100px;
+}
+
+.orc-bio {
+    width: 800px;
+    max-width: 90%;
+    margin: 0 auto;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#orc-face {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
