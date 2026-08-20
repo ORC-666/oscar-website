@@ -15,6 +15,22 @@
 }
 
 /*-------------- 
+O.R.C CURSOR
+----------------*/
+
+body,
+.play-button,
+.pause-button {
+    cursor: url("images/cursor/orc_cursor.png"), auto;
+}
+
+body:active,
+.play-button:active,
+.pause-button:active {
+    cursor: url("images/cursor/orc_cursor_pressed.png"), auto;
+}
+
+/*-------------- 
 O.R.C LOGO
 ----------------*/
 
@@ -42,6 +58,7 @@ RADIO
     justify-content: center;
     align-items: center;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 .background{
     z-index: 10;
