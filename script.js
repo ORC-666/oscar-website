@@ -1,3 +1,32 @@
+// preload buttons and quick images
+
+const imagesToPreload = [
+    "images/radio/playbutton_mouseover.png",
+    "images/radio/pausebutton_mouseover.png",
+    "images/radio/pausebutton_pressed.png",
+    "images/radio/playbutton_pressed.png",
+    "images/o1.png",
+    "images/o2.png",
+    "images/o3.png",
+    "images/o4.png",
+    "images/o5.png",
+    "images/r1.png",
+    "images/r2.png",
+    "images/r3.png",
+    "images/r4.png",
+    "images/r5.png",
+    "images/c1.png",
+    "images/c2.png",
+    "images/c3.png",
+    "images/c4.png",
+    "images/c5.png"
+];
+
+imagesToPreload.forEach(src => {
+    const img = new Image();
+    img.src = src;
+});
+
 // get the letter from the html and give it some info
 
 const letters = [
