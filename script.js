@@ -5,6 +5,8 @@ const imagesToPreload = [
     "images/radio/pausebutton_mouseover.png",
     "images/radio/pausebutton_pressed.png",
     "images/radio/playbutton_pressed.png",
+    "images/radio/playbutton_selected.png",
+    "images/radio/pausebutton_selected.png",
     "images/o1.png",
     "images/o2.png",
     "images/o3.png",

@@ -13,6 +13,9 @@
         transform: translateX(-100%);
     }
 }
+body{
+    background-color: rgb(0, 0, 0);
+}
 
 /*-------------- 
 O.R.C CURSOR
@@ -40,6 +43,9 @@ O.R.C LOGO
     align-items: center;
     gap: 40px;
     margin-top: 100px;
+    img {
+        filter: invert(100%);
+    }
 }
 .letter{
     width: 100px;
@@ -152,6 +158,7 @@ ORC BIO
     max-width: 90%;
     margin: 0 auto;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(230, 230, 230);
 }
 
 #orc-face {
