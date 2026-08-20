@@ -18,13 +18,13 @@
 O.R.C CURSOR
 ----------------*/
 
-body,
+html,
 .play-button,
 .pause-button {
     cursor: url("images/cursor/orc_cursor.png"), auto;
 }
 
-body:active,
+html:active,
 .play-button:active,
 .pause-button:active {
     cursor: url("images/cursor/orc_cursor_pressed.png"), auto;
