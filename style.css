@@ -1,13 +1,134 @@
+@font-face {
+    font-family: 'boutique_pixel';
+    src: url('fonts/BoutiqueBitmap9x9_1.6.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@keyframes scrollText {
+    from {
+        transform: translateX(400px);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/*-------------- 
+O.R.C LOGO
+----------------*/
+
 .orc-logo{
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    gap: 10px;
+    align-items: center;
+    gap: 40px;
     margin-top: 100px;
 }
-.orc-logo img {
+.letter{
     width: 100px;
 }
+.dot{
+    width: 30px;
+}
+
+/*-------------- 
+RADIO
+----------------*/
+
+.orc-radio{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.background{
+    z-index: 10;
+    width: 600px;
+}
+.screen{
+    position: absolute;
+    width: 600px;
+}
+
+/*-------------- 
+RADIO BUTTONS
+----------------*/
+
+.play-button{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    margin-top: 50px;
+    margin-right: 420px;
+    z-index: 10;
+    background-image: url("images/radio/playbutton.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    background-color: transparent;
+}
+.play-button:hover{
+    background-image: url("images/radio/playbutton_mouseover.png");
+}
+.play-button.selected{
+    background-image: url("images/radio/playbutton_selected.png")
+}
+.play-button:active{
+    background-image: url("images/radio/playbutton_pressed.png")
+}
+.pause-button{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    margin-right: 290px;
+    margin-top: 95px;
+    z-index: 10;
+    background-image: url("images/radio/pausebutton.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    background-color: transparent;
+}
+.pause-button:hover{
+    background-image: url("images/radio/pausebutton_mouseover.png");
+}
+.pause-button.selected{
+    background-image: url("images/radio/pausebutton_selected.png");
+}
+.pause-button:active{
+    background-image: url("images/radio/pausebutton_pressed.png")
+}
+
+/*-------------- 
+RADIO TEXT
+----------------*/
+
+.radio-screen {
+    position: absolute;
+    width: 400px;
+    height: 30px;
+    overflow: hidden;
+    bottom: 117px;
+}
+.radio-screen-text {
+    position: absolute;
+    font-size: larger;
+    color:rgb(100, 201, 0);
+    font-family: 'boutique_pixel', sans-serif;
+    z-index: 5;
+
+    white-space: nowrap;
+
+    animation: scrollText 10s linear infinite;
+}
+
+/*-------------- 
+ORC BIO
+----------------*/
 
 .orc-bio {
     width: 800px;

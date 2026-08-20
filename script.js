@@ -1,6 +1,195 @@
-// REFERENCES
+// get the letter from the html and give it some info
 
-// grab the letter we need from the html and give them properties
+const letters = [
+{
+    element: document.getElementById("letter-o"),
+    name: "o",
+    current: 1
+},
+{
+    element: document.getElementById("letter-r"),
+    name: "r",
+    current: 1
+},
+{
+    element: document.getElementById("letter-c"),
+    name: "c",
+    current: 1
+}
+];
+
+// settings for the animation, how many letter variations and the delay window
+
+const numberOfVariations = 5;
+const minimumDelay = 1000;
+const maximumDelay = 1000;
+
+// Letter changing functions
+
+function pickRandomLetter() {
+
+    // pick a random time and a random letter
+
+    let randomDelay = Math.floor(Math.random() * (maximumDelay - minimumDelay)) + minimumDelay;
+    let randomIndex = Math.floor(Math.random() * letters.length);
+    // let randomLetter = letters[randomIndex];
+
+    // run the functions and then add the time to delay the next one
+
+    setTimeout(function(){
+
+        changeLetter(letters[randomIndex]);
+        pickRandomLetter();
+
+    }, randomDelay);
+
+    // letterSound.play();
+
+    // changeLetter(randomLetter);
+};
+
+function changeLetter(letter) {
+
+    // create a random number between 1 and 5 (number of images)
+
+    let newLetter = Math.floor(Math.random() * numberOfVariations) + 1;
+
+        // if the chosen number is the same as the current number choose a new random number
+
+        while (newLetter === letter.current){
+            newLetter = Math.floor(Math.random() * numberOfVariations) + 1;
+        }
+
+        // change the image if the number is different
+
+        letter.current = newLetter;
+        letter.element.src = "images/" + letter.name + letter.current + ".png";
+
+};
+
+pickRandomLetter();
+
+// -----------------------------------------------------------------
+// RADIO
+// -----------------------------------------------------------------
+
+// connect buttons to html
+
+const playButton = document.getElementById("radio-play");
+const pauseButton = document.getElementById("radio-pause");
+const radioButton = document.querySelectorAll(".radio-button");
+
+// list songs
+
+const songs = [
+
+    {src: "audio/songs/01 As Good As Dead.mp3",
+    title: "O.R.C - As Good As Dead"},
+
+    {src:"audio/songs/02 Mile High Club.mp3",
+    title: "O.R.C - Mile High Club"},
+
+    {src: "audio/songs/03 The Earth Looks Flat To A Falling Person.mp3",
+    title: "O.R.C - The Earth Looks Flat To A Falling Person"},
+
+    {src: "audio/songs/04 Plane Seat Dominoes.mp3",
+    title: "O.R.C - Plane Seat Dominoes"},
+
+    {src: "audio/songs/An Odyssey Of Errors.wav",
+    title: "O.R.C - An Odyssey Of Errors"},
+
+    {src: "audio/songs/Dungeon Delve.wav",
+    title: "O.R.C - Dungeon Delve"},
+
+    {src: "audio/songs/Goid.wav",
+    title: "O.R.C - Goid"},
+
+    {src: "audio/songs/mosquito_bite.wav",
+    title: "O.R.C - Mosquito Bite"},
+
+    {src: "audio/songs/portasound.mp3",
+    title: "O.R.C - Portaloo"},
+
+    {src:"audio/songs/self_proclaimed_narcissist.wav",
+    title: "O.R.C - Self Proclaimed Narcissist"},
+
+    {src: "audio/songs/soft_inside_me.mp3",
+    title: "O.R.C - Soft Around Me"},
+
+    {src: "audio/songs/The Catacombs.wav",
+    title: "O.R.C - The Catacombs"}
+
+];
+
+const songTitle = document.getElementById("song-title");
+
+// audio player
+
+const audioPlayer = new Audio();
+let radioStarted = false;
+audioPlayer.addEventListener("ended", function(){
+    pickRandomSong();
+})
+
+// radio button functions
+
+// hover sound for any button on the radio
+
+const hoverSound = new Audio("audio/littleclick.mp3");
+
+radioButton.forEach(function(button) {
+    button.addEventListener("pointerdown", function() {
+        hoverSound.play();
+    })
+});
+
+// button functions
+
+const radioPlay = new Audio("audio/radio_play.wav");
+
+playButton.addEventListener("pointerup", function() {
+    
+    playButton.classList.add("selected");
+    pauseButton.classList.remove("selected");
+    radioPlay.play();
+
+    if (radioStarted === false) {
+        pickRandomSong();
+        radioStarted = true;
+    } else {
+        audioPlayer.play();
+    }
+
+});
+
+pauseButton.addEventListener("pointerup", function() {
+    
+    pauseButton.classList.add("selected");
+    playButton.classList.remove("selected");
+    radioPlay.play();
+
+    audioPlayer.pause();
+
+});
+
+// random song picker
+
+let previousSong;
+
+function pickRandomSong() {
+
+    let randomSong = Math.floor(Math.random() * songs.length);
+
+    while (randomSong === previousSong) {
+        randomSong = Math.floor(Math.random() * songs.length);
+    };
+
+    songTitle.textContent = songs[randomSong].title;
+
+    audioPlayer.src = songs[randomSong].src;
+    audioPlayer.play();
+
+};
 
 // orc bio face
 
@@ -57,11 +246,3 @@ function changeFace() {
 };
 
 changeFace();
-
-// generate a random number between 1 - 5
-
-// make sure it's not the same as the current number
-
-// remember that number
-
-// change the image
