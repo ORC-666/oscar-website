@@ -166,3 +166,27 @@ ORC BIO
     margin-right: 10px;
     margin-bottom: 10px;
 }
+
+/*-------------- 
+ORC CAROUSEL
+----------------*/
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 400px;
+    border: 2px;
+    border-style: dashed;
+    border-color: rgb(152, 152, 152);
+}
+
+.carousel-slide {
+    width: 570px;
+    height: 370px;
+    border: 2px;
+    border-style: dotted;
+    border-color: beige;
+    color: aliceblue;
+}
