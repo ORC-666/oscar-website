@@ -163,6 +163,7 @@ ORC BIO
 
 #orc-face {
     float: left;
+    width: 250px;
     margin-right: 10px;
     margin-bottom: 10px;
 }
