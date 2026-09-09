@@ -189,4 +189,12 @@ ORC CAROUSEL
     border-style: dotted;
     border-color: beige;
     color: aliceblue;
+    text-align: center;
+}
+
+.freefall-video {
+    display: block;
+    width: 70%;
+    aspect-ratio: 16/9;
+    margin: auto;
 }
