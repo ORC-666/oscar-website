@@ -65,15 +65,16 @@ RADIO
     align-items: center;
     margin-top: 50px;
     margin-bottom: 50px;
-    max-width: 80%;
 }
 .background{
     z-index: 10;
     width: 600px;
+    max-width: 80%;
 }
 .screen{
     position: absolute;
     width: 600px;
+    max-width: 80%;
 }
 
 /*-------------- 
