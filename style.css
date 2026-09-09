@@ -85,8 +85,8 @@ RADIO BUTTONS
     position: absolute;
     width: 70px;
     height: 70px;
-    margin-top: 50px;
-    margin-right: 420px;
+    top: 46.8%;
+    left: 30.2%;
     z-index: 10;
     background-image: url("images/radio/playbutton.png");
     background-size: contain;
