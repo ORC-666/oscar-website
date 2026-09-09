@@ -65,6 +65,7 @@ RADIO
     align-items: center;
     margin-top: 50px;
     margin-bottom: 50px;
+    max-width: 80%;
 }
 .background{
     z-index: 10;
