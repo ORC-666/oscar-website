@@ -240,10 +240,6 @@ const faceAnimations = [
     {
     src: "images/orc_face_blink.gif",
     duration: 300
-    },
-    {
-    src: "images/orc_face_scratch.gif",
-    duration: 1400
     }
 ];
 
